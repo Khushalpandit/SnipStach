@@ -1,0 +1,23 @@
+{
+  "name": "snipstash",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "scripts": {
+    "dev:client": "bun run --cwd client dev",
+    "dev:server": "bun run --cwd server dev",
+    "dev": "bun run dev:server",
+    "build": "bun run --cwd shared build && bun run --cwd client build && bun run --cwd server build",
+    "test": "bun run --cwd shared test && bun run --cwd client test && bun run --cwd server test"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.3",
+    "@types/mongoose": "^5.11.97",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}
